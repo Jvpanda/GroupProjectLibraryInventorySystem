@@ -1,0 +1,32 @@
+#ifndef CHECKEDOUTITEM_H
+#define CHECKEDOUTITEM_H
+
+#include "Item.h"
+
+class CheckedOutItem {
+        public:
+                // Getters
+                Item getItem() const;
+                int getOriginalShelf() const;
+                int getOriginalCompartment() const;
+                std::string getNameOfOwner() const;
+                std::string getDueDate() const;
+
+                // Setters
+                Item setItem(const Item &newItem);
+                void setOriginalShelf(int shelf);
+                void setOriginalCompartment(int compartment);
+                void setNameOfOwner(const std::string &owner);
+                void setDueDate(const std::string &date);
+
+                void operator<<(std::ostream &os) const;
+
+        private:
+                Item *item;
+                int originalShelf;
+                int originalCompartment;
+                std::string nameOfOwner;
+                std::string dueDate;
+};
+
+#endif
