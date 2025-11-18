@@ -17,7 +17,7 @@ class Movie : public Item {
                 void setDirector(const std::string &director);
                 void setMainActors(const std::vector<std::string> &actors);
 
-                void operator<<(std::ostream &os) const override;
+                friend std::ostream &operator<<(std::ostream &os, Movie& movie);
 
         private:
                 std::string title;

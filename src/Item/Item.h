@@ -17,7 +17,7 @@ class Item {
                 void setId(int id);
 
                 virtual void print() const                      = 0;
-                virtual void operator<<(std::ostream &os) const = 0;
+                friend std::ostream& operator<<(std::ostream& os, const Item& item);
 
         private:
                 std::string name;
