@@ -19,7 +19,7 @@ class CheckedOutItem {
                 void setNameOfOwner(const std::string &owner);
                 void setDueDate(const std::string &date);
 
-                void operator<<(std::ostream &os) const;
+                friend std::ostream &operator<<(std::ostream &os, CheckedOutItem& checkedOutItem);
 
         private:
                 Item *item;

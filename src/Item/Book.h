@@ -17,7 +17,7 @@ class Book : public Item {
                 void setCopyrightDate(const std::string &copyrightDate);
 
                 void print() const override;
-                void operator<<(std::ostream &os) const override;
+                friend std::ostream& operator<<(std::ostream& os, Book& book);
 
         private:
                 std::string title;

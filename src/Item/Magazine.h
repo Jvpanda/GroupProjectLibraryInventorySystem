@@ -15,7 +15,7 @@ class Magazine : public Item {
                 void setTitleOfMain(const std::string &title);
 
                 void print() const override;
-                void operator<<(std::ostream &os) const override;
+                friend std::ostream &operator<<(std::ostream &os, Magazine& magazine);
 
         private:
                 std::string edition;
