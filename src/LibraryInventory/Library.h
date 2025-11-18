@@ -11,7 +11,7 @@ class Library {
                 void printStorage() const;
                 void addShelf(const Shelf &shelf);
                 void addItem(Item *item);
-                void swap();
+                void swap(Item& item1, Item& item2);
                 Shelf &operator[](int index);
 
         private:
