@@ -3,15 +3,17 @@
 
 #include "../Item/CheckedOutItem.h"
 #include "Shelf.h"
+#include "../Exceptions.h"
 #include <vector>
 
-class Library {
+class Library
+{
         public:
                 void printCheckedOut() const;
                 void printStorage() const;
                 void addShelf(const Shelf &shelf);
-                void addItem(Item *item);
-                void swap(Item *item1, Item *item2);
+                void addItem(const Item *item, const int shelfIndex, const int compartmentIndex);
+                void swap(const Item *item1, const Item *item2);
                 Shelf &operator[](int index);
 
         private:

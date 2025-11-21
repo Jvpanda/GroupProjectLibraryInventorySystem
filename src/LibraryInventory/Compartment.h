@@ -10,7 +10,7 @@ class Compartment {
                 bool getHasOwner() const;
 
                 // Setters
-                void addItem(Item *item);
+                void addItem(const Item *item);
                 Item *removeItem();
                 void setHasOwner(bool ownerStatus);
 

@@ -21,16 +21,22 @@ void Library::addShelf(const Shelf& shelf)
         shelves.emplace_back(shelf);
 }
 
-void Library::addItem(Item* item)
+void Library::addItem(const Item *item, const int shelfIndex, const int compartmentIndex)
+{
+        if (compartmentIndex > 14 || compartmentIndex < 0 ||
+                !shelves[shelfIndex][compartmentIndex].isEmpty())
+        {
+                throw CompartmentNotFoundException("Unable to add item.");
+        }
+        shelves[shelfIndex][compartmentIndex].addItem(item);
+}
+
+void Library::swap(const Item *item1, const Item *item2)
 {
 
 }
 
-void Library::swap(Item* item1, Item* item2)
+Shelf& Library::operator[](int index)
 {
-
-}
-
-Shelf& Library::operator[](int index) {
         return shelves[index];
 }
