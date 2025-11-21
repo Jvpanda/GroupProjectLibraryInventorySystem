@@ -24,7 +24,7 @@ void Library::addShelf(const Shelf& shelf)
 void Library::addItem(const Item *item, const int shelfIndex, const int compartmentIndex)
 {
         if (compartmentIndex > 14 || compartmentIndex < 0 ||
-                !shelves[shelfIndex][compartmentIndex].isEmpty())
+                !(*this)[shelfIndex][compartmentIndex].isEmpty())
         {
                 throw CompartmentNotFoundException("Unable to add item.");
         }
@@ -38,5 +38,9 @@ void Library::swap(const Item *item1, const Item *item2)
 
 Shelf& Library::operator[](int index)
 {
+        if (index < 0 || index >= shelves.size())
+        {
+                throw ShelfNotFoundException("Shelf not found.");
+        }
         return shelves[index];
 }
