@@ -12,7 +12,7 @@ class Library
                 void printCheckedOut() const;
                 void printStorage() const;
                 void addShelf(const Shelf &shelf);
-                void addItem(const Item *item, const int shelfIndex, const int compartmentIndex);
+                void addItem(Item *item, const int shelfIndex, const int compartmentIndex);
                 void swap(const Item *item1, const Item *item2);
                 Shelf &operator[](int index);
 

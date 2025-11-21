@@ -21,7 +21,7 @@ void Library::addShelf(const Shelf& shelf)
         shelves.emplace_back(shelf);
 }
 
-void Library::addItem(const Item *item, const int shelfIndex, const int compartmentIndex)
+void Library::addItem(Item *item, const int shelfIndex, const int compartmentIndex)
 {
         if (compartmentIndex > 14 || compartmentIndex < 0 ||
                 !(*this)[shelfIndex][compartmentIndex].isEmpty())
