@@ -47,6 +47,7 @@ void Library::swap(int itemOneShelfIndex, int itemOneCompIndex,
         catch (const std::exception& e)
         {
                 std::cout << "Compartment not found.\n";
+                return;
         }
 
         Item *item1;
